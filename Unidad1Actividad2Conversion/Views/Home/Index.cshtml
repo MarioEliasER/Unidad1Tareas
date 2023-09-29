@@ -1,0 +1,27 @@
+﻿@model Unidad1Actividad2Conversion.Models.ViewModels.ConversionViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/estilos.css" rel="stylesheet" />
+    <title>Conversión de moneda.</title>
+</head>
+<body>
+    <main>
+        <h1>Conversión de moneda.</h1><br />
+        <form action="~/Home/Index">
+            <label>Ingrese el valor a convertir: </label>
+            <input type="number" name="Valor" value="@Model.Valor" required /><br />
+            <label>Selecciona el tipo de moneda a convertir:</label><br />
+            <input type="radio" name="TipoMoneda" id="mxn" value="MXN" />
+            <label for="mxn">Peso Mexicano</label>
+            <input type="radio" name="TipoMoneda" id="usd" value="USD" />
+            <label for="usd">Dólar Americano</label>
+            <br />
+            <label>Resultado: @Model.ValorConvertido.ToString("$0.00")</label>
+            <br />
+            <input type="submit" value="Convertir" />
+        </form>
+    </main>
+</body>
+</html>
